@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tech Ltd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fa9ce2;
+        }
+        header {
+            background: #094f18;
+            color: rgb(241, 188, 188);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #e8491d;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: rgb(255, 130, 130);
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background-color: #068288;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #35424a;
+            color: white;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <b> <h1>Web Tech Ltd</h1>  </b>
+    </header>
+    
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About</a>
+    </nav>
+    
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
+            <h2>Home Page Content</h2>
+            <p>This is the main page of my simple website. You can add your content here.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+        </div>
+    </div>
+    
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>This section tells you more about our website and what we do.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+            
+            <h3>Our Team</h3>
+            <ul>
+                <li>Patrick Mukesh - Web Developer</li>
+                <li>Kamana Seth - Designer</li>
+                <li>Mike karangwa - Content Writer</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 My  Website page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Prevent default anchor behavior
+            return false;
+        }
+    </script>
+</body>
+</html>
